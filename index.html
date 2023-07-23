@@ -8,14 +8,12 @@
 </head>
 <body>
     <h1>Enter the Details</h1>
-    <form onsubmit="myfunc(event)" method="post" action="/what/ever">
-        <div>
-            <h2>Enter your Name</h2>
-            <input type="text" id="name" required>
-            <br>
-            <input id="btn" type="submit" value="Take the Quiz!!">
-        </div>
-    </form>
+    <div>
+        <h2>Enter your Name</h2>
+        <input type="text" id="name" required>
+        <br>
+        <input id="btn" onclick="myfunc(event)" type="submit" value="Take the Quiz!!">
+    </div>
     <script>
         function myfunc(event) {
             var Name = document.getElementById("name").value;
