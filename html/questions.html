@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time</title>
+    <link rel="stylesheet" href="../css/questions.css">
+</head>
+<body>
+
+    <h1>Question section :</h1>
+    <div class="ques">
+        <h2>Question 1</h2>
+        <h3>What is the Capital of <span id="word1"></span> ?</h3>
+        <div>
+            <input type="radio" name="opt1" value="v11">
+            <label for="q11" id="q11"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt1" value="v12">
+            <label for="q12" id="q12"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt1" value="v13">
+            <label for="q13" id="q13"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt1" value="v14">
+            <label for="q14" id="q14"></label>
+        </div>
+        <div>
+            <input id="btn1" type="submit" value="Check Answer" name="opt1" onclick="return ans1(event)">    
+        </div>
+        <div>
+            <p id="answer1"></p>
+        </div>
+    </div>
+    <div class="ques">
+        <h2>Question 2</h2>
+        <h3>What is the Capital of <span id="word2"></span> ?</h3>
+        <div>
+            <input type="radio" name="opt2" value="v21">
+            <label for="q21" id="q21"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt2" value="v22">
+            <label for="q22" id="q22"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt2" value="v23">
+            <label for="q23" id="q23"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt2" value="v24">
+            <label for="q24" id="q24"></label>
+        </div>
+        <div>
+            <input id="btn2" type="submit" value="Check Answer" name="opt2" onclick="ans2(event)">    
+        </div>
+        <div>
+            <p id="answer2"></p>
+        </div>
+    </div>
+    <div class="ques">
+        <h2>Question 3</h2>
+        <h3>What is the Capital of <span id="word3"></span> ?</h3>
+        <div>
+            <input type="radio" name="opt3" value="v31">
+            <label for="q31" id="q31"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt3" value="v32">
+            <label for="q32" id="q32"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt3" value="v33">
+            <label for="q33" id="q33"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt3" value="v34">
+            <label for="q34" id="q34"></label>
+        </div>
+        <div>
+            <input id="btn3" type="submit" value="Check Answer" name="opt3" onclick="ans3(event)">    
+        </div>
+        <div>
+            <p id="answer3"></p>
+        </div>
+    </div>
+    <div class="ques">
+        <h2>Question 4</h2>
+        <h3>What is the Capital of <span id="word4"></span> ?</h3>
+        <div>
+            <input type="radio" name="opt4" value="v41">
+            <label for="q41" id="q41"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt4" value="v42">
+            <label for="q42" id="q42"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt4" value="v43">
+            <label for="q43" id="q43"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt4" value="v44">
+            <label for="q44" id="q44"></label>
+        </div>
+        <div>
+            <input id="btn4" type="submit" value="Check Answer" name="opt4" onclick="ans4(event)">    
+        </div>
+        <div>
+            <p id="answer4"></p>
+        </div>
+    </div>
+    <div class="ques">
+        <h2>Question 5</h2>
+        <h3>What is the Capital of <span id="word5"></span> ?</h3>
+        <div>
+            <input type="radio" name="opt5" value="v51">
+            <label for="q51" id="q51"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt5" value="v52">
+            <label for="q52" id="q52"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt5" value="v53">
+            <label for="q53" id="q53"></label>
+        </div>
+        <div>
+            <input type="radio" name="opt5" value="v54">
+            <label for="q54" id="q54"></label>
+        </div>
+        <div>
+            <input id="btn5" type="submit" value="Check Answer" name="opt5" onclick="ans5(event)">    
+        </div>
+        <div>
+            <p id="answer5"></p>
+        </div>
+    </div>
+    <button id="btn" type="button" onclick="scr(event)">See Your Score</button>
+
+    <script>
+        let dictionary = new Object();
+        let countries = {"Andhra Pradesh": "Amaravati",
+            "Arunachal Pradesh": "Itanagar",
+            "Assam": "Dispur",
+            "Bihar": "Patna",
+            "Chhattisgarh": "Raipur",
+            "Goa": "Panaji",
+            "Gujarat": "Gandhinagar",
+            "Haryana": "Chandigarh",
+            "Himachal Pradesh": "Shimla",
+            "Jharkhand": "Ranchi",
+            "Karnataka": "Bengaluru",
+            "Kerala": "Thiruvananthapuram",
+            "Madhya Pradesh": "Bhopal",
+            "Maharashtra": "Mumbai",
+            "Manipur": "Imphal",
+            "Meghalaya": "Shillong",
+            "Mizoram": "Aizawl",
+            "Nagaland": "Kohima",
+            "Odisha": "Bhubaneswar",
+            "Punjab": "Chandigarh",
+            "Rajasthan": "Jaipur",
+            "Sikkim": "Gangtok",
+            "Tamil Nadu": "Chennai",
+            "Telangana": "Hyderabad",
+            "Tripura": "Agartala",
+            "Uttar Pradesh": "Lucknow",
+            "Uttarakhand": "Dehradun",
+            "West Bengal": "Kolkata",
+            "Andaman and Nicobar Islands": "Port Blair",
+            "Chandigarh": "Chandigarh",
+            "Dadra and Nagar Haveli and Daman and Diu": "Daman",
+            "The Government of NCT of Delhi": "New Delhi",
+            "Jammu and Kashmir": "Srinagar (summer), Jammu (winter)",
+            "Ladakh": "Leh",
+            "Lakshadweep": "Kavaratti",
+            "Puducherry": "Pondicherry"
+        };
+        
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+            while (currentIndex != 0) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+                    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        let states = Object.keys(countries);
+        shuffle(states);
+        let capitals = Object.values(countries);
+        shuffle(capitals);
+        let score = 0;
+        
+        document.getElementById("word1").innerHTML = states[1];
+        let crtans1 = countries[states[1]];
+        let wrngans1 = capitals;
+        let removed1 = wrngans1.splice(wrngans1.indexOf(crtans1),1);
+        let options1 = wrngans1.slice(0,3);
+        let randopt1 = options1.push(crtans1);
+        shuffle(options1)
+        document.getElementById("q11").innerHTML = options1[0];
+        document.getElementById("q12").innerHTML = options1[1];
+        document.getElementById("q13").innerHTML = options1[2];
+        document.getElementById("q14").innerHTML = options1[3];
+        const btn1 = document.querySelector('#btn1');        
+        const radioButtons1 = document.querySelectorAll('input[name="opt1"]');
+        function ans1(event){
+            let selectedSize1;
+            for (const radioButton of radioButtons1) {
+                if (radioButton.checked) {
+                    selectedSize1 = radioButton.value;
+                    break;
+                }
+            }
+            if(selectedSize1 == "v11"){
+                if(crtans1 == options1[0]){
+                    document.getElementById("answer1").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer1").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize1 == "v12"){
+                if(crtans1 == options1[1]){
+                    document.getElementById("answer1").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer1").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize1 == "v13"){
+                if(crtans1 == options1[2]){
+                    document.getElementById("answer1").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer1").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize1 == "v14"){
+                if(crtans1 == options1[3]){
+                    document.getElementById("answer1").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer1").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            return true;
+        }
+       
+        document.getElementById("word2").innerHTML = states[2];
+        let crtans2 = countries[states[2]];
+        let wrngans2 = capitals;
+        let removed2 = wrngans2.splice(wrngans2.indexOf(crtans2),1);
+        let options2 = wrngans2.slice(0,3);
+        let randopt2 = options2.push(crtans2);
+        shuffle(options2)
+        document.getElementById("q21").innerHTML = options2[0];
+        document.getElementById("q22").innerHTML = options2[1];
+        document.getElementById("q23").innerHTML = options2[2];
+        document.getElementById("q24").innerHTML = options2[3];
+        const btn2 = document.querySelector('#btn2');        
+        const radioButtons2 = document.querySelectorAll('input[name="opt2"]');
+        function ans2(event){
+            let selectedSize2;
+            for (const radioButton of radioButtons2) {
+                if (radioButton.checked) {
+                    selectedSize2 = radioButton.value;
+                    break;
+                }
+            }
+            if(selectedSize2 == "v21"){
+                if(crtans2 == options2[0]){
+                    document.getElementById("answer2").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer2").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize2 == "v22"){
+                if(crtans2 == options2[1]){
+                    document.getElementById("answer2").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer2").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize2 == "v23"){
+                if(crtans2 == options2[2]){
+                    document.getElementById("answer2").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer2").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize2 == "v24"){
+                if(crtans2 == options2[3]){
+                    document.getElementById("answer2").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer2").innerHTML = "Your Answer is Wrong";
+                }
+            }
+        }
+
+        document.getElementById("word3").innerHTML = states[3];
+        let crtans3 = countries[states[3]];
+        let wrngans3 = capitals;
+        let removed3 = wrngans3.splice(wrngans3.indexOf(crtans3),1);
+        let options3 = wrngans3.slice(0,3);
+        let randopt3 = options3.push(crtans3);
+        shuffle(options3)
+        document.getElementById("q31").innerHTML = options3[0];
+        document.getElementById("q32").innerHTML = options3[1];
+        document.getElementById("q33").innerHTML = options3[2];
+        document.getElementById("q34").innerHTML = options3[3];
+        const btn3 = document.querySelector('#btn3');        
+        const radioButtons3 = document.querySelectorAll('input[name="opt3"]');
+        function ans3(event){
+            let selectedSize3;
+            for (const radioButton of radioButtons3) {
+                if (radioButton.checked) {
+                    selectedSize3 = radioButton.value;
+                    break;
+                }
+            }
+            if(selectedSize3 == "v31"){
+                if(crtans3 == options3[0]){
+                    document.getElementById("answer3").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer3").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize3 == "v32"){
+                if(crtans3 == options3[1]){
+                    document.getElementById("answer3").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer3").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize3 == "v33"){
+                if(crtans3 == options3[2]){
+                    document.getElementById("answer3").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer3").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize3 == "v34"){
+                if(crtans3 == options3[3]){
+                    document.getElementById("answer3").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer3").innerHTML = "Your Answer is Wrong";
+                }
+            }
+        }
+
+        document.getElementById("word4").innerHTML = states[4];
+        let crtans4 = countries[states[4]];
+        let wrngans4 = capitals;
+        let removed4 = wrngans4.splice(wrngans4.indexOf(crtans4),1);
+        let options4 = wrngans4.slice(0,3);
+        let randopt4 = options4.push(crtans4);
+        shuffle(options4)
+        document.getElementById("q41").innerHTML = options4[0];
+        document.getElementById("q42").innerHTML = options4[1];
+        document.getElementById("q43").innerHTML = options4[2];
+        document.getElementById("q44").innerHTML = options4[3];
+        const btn4 = document.querySelector('#btn4');        
+        const radioButtons4 = document.querySelectorAll('input[name="opt4"]');
+        function ans4(event){
+            let selectedSize4;
+            for (const radioButton of radioButtons4) {
+                if (radioButton.checked) {
+                    selectedSize4 = radioButton.value;
+                    break;
+                }
+            }
+            if(selectedSize4 == "v41"){
+                if(crtans4 == options4[0]){
+                    document.getElementById("answer4").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer4").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize4 == "v42"){
+                if(crtans4 == options4[1]){
+                    document.getElementById("answer4").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer4").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize4 == "v43"){
+                if(crtans4 == options4[2]){
+                    document.getElementById("answer4").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer4").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize4 == "v44"){
+                if(crtans4 == options4[3]){
+                    document.getElementById("answer4").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer4").innerHTML = "Your Answer is Wrong";
+                }
+            }
+        }
+
+        document.getElementById("word5").innerHTML = states[5];
+        let crtans5 = countries[states[5]];
+        let wrngans5 = capitals;
+        let removed5 = wrngans5.splice(wrngans5.indexOf(crtans5),1);
+        let options5 = wrngans5.slice(0,3);
+        let randopt5 = options5.push(crtans5);
+        shuffle(options5)
+        document.getElementById("q51").innerHTML = options5[0];
+        document.getElementById("q52").innerHTML = options5[1];
+        document.getElementById("q53").innerHTML = options5[2];
+        document.getElementById("q54").innerHTML = options5[3];
+        const btn5 = document.querySelector('#btn5');        
+        const radioButtons5 = document.querySelectorAll('input[name="opt5"]');
+        function ans5(event){
+            let selectedSize5;
+            for (const radioButton of radioButtons5) {
+                if (radioButton.checked) {
+                    selectedSize5 = radioButton.value;
+                    break;
+                }
+            }
+            if(selectedSize5 == "v51"){
+                if(crtans5 == options5[0]){
+                    document.getElementById("answer5").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer5").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize5 == "v52"){
+                if(crtans5 == options5[1]){
+                    document.getElementById("answer5").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer5").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize5 == "v53"){
+                if(crtans5 == options5[2]){
+                    document.getElementById("answer5").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer5").innerHTML = "Your Answer is Wrong";
+                }
+            }
+            else if(selectedSize5 == "v54"){
+                if(crtans5 == options5[3]){
+                    document.getElementById("answer5").innerHTML = "Your Answer is Correct!";
+                    ++score;
+                }
+                else{
+                    document.getElementById("answer5").innerHTML = "Your Answer is Wrong";
+                }
+            }
+        }
+        function scr(event){
+            alert(localStorage.getItem("Name") + " Your Score is " + score + "/5");
+        }
+
+    </script>
+</body>
+</html>

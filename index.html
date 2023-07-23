@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Enter the Details</h1>
+    <form onsubmit="myfunc(event)" method="post" action="./html/questions.html">
+        <div>
+            <h2>Enter your Name</h2>
+            <input type="text" id="name" required>
+            <br>
+            <input id="btn" type="submit" value="Take the Quiz!!">
+        </div>
+    </form>
+    <script>
+        function myfunc(event) {
+            var Name = document.getElementById("name").value;
+
+            localStorage.setItem("Name",Name);
+            alert("Data Collected");
+        }
+    </script>
+</body>
+</html>

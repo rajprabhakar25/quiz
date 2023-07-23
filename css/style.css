@@ -1,0 +1,26 @@
+body{
+    background-image: url("../assets/images/quiz.jpg");
+    margin-top: 100px;
+}
+
+*{
+    text-align: center;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+input{
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px 20px;
+}
+
+#btn{
+    font-weight: bold;
+    font-size: medium;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: grey;
+    color: black;
+}
