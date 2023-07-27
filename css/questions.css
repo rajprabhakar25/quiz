@@ -12,11 +12,20 @@ h1{
 }
 
 .ques{
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin: 40px;
+    margin-top: 50px;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform .8s;
 }
 
-#btn1, #btn2, #btn3, #btn4, #btn5{
+.ques:hover{
+    transform: scale(1.05);
+    backdrop-filter: blur(10px);
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15{
     font-weight: bold;
     font-size: medium;
     margin-top: 10px;
@@ -25,7 +34,7 @@ h1{
     background-color: white;
 }
 
-#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover{
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover, #btn8:hover, #btn9:hover, #btn10:hover, #btn11:hover, #btn12:hover, #btn13:hover, #btn14:hover, #btn15:hover{
     cursor: pointer;
     background-color: grey;
 }
